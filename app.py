@@ -427,8 +427,8 @@ def book():
 def staff_uppercase_redirect():
     return redirect(url_for('staff_login'))
 
-if __name__ == "__main__":
-    app.run(debug=True, use_reloader=False)
+if __name__ == '__main__':
+    app.run(debug=True, port=5000)
 
 
 
