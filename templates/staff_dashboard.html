@@ -1,0 +1,28 @@
+<h2>🏨 Staff Dashboard</h2>
+
+<h3>📊 Today’s Status Summary</h3>
+<ul>
+    <li>Booked: {{ summary.Booked }}</li>
+    <li>Checked-In: {{ summary["Checked-In"] }}</li>
+    <li>Checked-Out: {{ summary["Checked-Out"] }}</li>
+</ul>
+
+<h3>📅 Today’s Customers</h3>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>Guest Name</th>
+        <th>Hotel</th>
+        <th>Members</th>
+        <th>Status</th>
+    </tr>
+
+    {% for b in bookings %}
+    <tr>
+        <td>{{ b.guest_name }}</td>
+        <td>{{ b.hotel_name }}</td>
+        <td>{{ b.members }}</td>
+        <td>{{ b.status }}</td>
+    </tr>
+    {% endfor %}
+</table>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Blissful Abodes{% endblock %}</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Correct CSS path -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+   <div class="navbar">
+    <div class="nav-brand">Blissful Abodes</div>
+
+    <!-- PROFILE PILL -->
+    <div class="profile-pill" id="profileBtn">
+        <span class="icon">👤</span>
+        <span class="text">Menu</span>
+        <span class="arrow">▾</span>
+    </div>
+</div>
+
+<!-- DROPDOWN -->
+<div class="profile-dropdown" id="profileMenu">
+     <a href="/" class="home">Home</a>
+    <a href="/about">About</a>
+    <a href="/login">Login</a>
+    <a href="/signup">Signup</a>
+    <a href="/staff/login" class="staff">Staff</a>
+    <a href="/admin/login" class="admin">Admin Login</a>
+</div>
+    </nav>
+
+    <!-- PAGE CONTENT -->
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2026 Blissful Abodes. All rights reserved.</p>
+    </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("profileBtn");
+    const menu = document.getElementById("profileMenu");
+
+    btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        menu.classList.toggle("show");
+    });
+
+    document.addEventListener("click", function () {
+        menu.classList.remove("show");
+    });
+});
+</script>
+
+
+</body>
+</html>

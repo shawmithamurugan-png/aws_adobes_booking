@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+{% block title %}About - Blissful Abodes | Your Perfect Stay{% endblock %}
+
+{% block content %}
+<div class="container about-page">
+
+    <!-- HERO IMAGE -->
+    <div class="about-hero">
+        <h1>About Blissful Abodes</h1>
+        <p>Your Perfect Stay, Every Time</p>
+    </div>
+
+    <!-- ABOUT CONTENT -->
+    <div class="about-content">
+
+        <!-- Intro -->
+        <p class="lead text-center mb-4">
+            Welcome to <strong>Blissful Abodes</strong> — your destination for
+            discovering premium hotels, luxury rooms, and unforgettable stays.
+            We make booking comfort simple, secure, and stress-free.
+            Whether you're traveling for leisure or business, we help you find the
+            perfect stay with confidence.
+        </p>
+
+        <!-- Our Mission -->
+        <h3 class="text-center mt-5">Our Mission</h3>
+        <p class="text-center mb-4">
+            Our mission is to help travelers find the perfect place to stay by
+            offering carefully selected hotels, transparent pricing, and an
+            easy-to-use booking experience.
+            We focus on quality, comfort, and trust in every booking.
+        </p>
+
+        <p class="text-center mb-4">
+            At Blissful Abodes, we believe that every journey begins with a comfortable stay.
+            Our platform connects travelers with hotels that meet high standards of
+            quality, cleanliness, and hospitality.
+        </p>
+
+        <!-- What We Offer & Why Choose Us -->
+        <div class="about-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:2.5rem; margin-top:3rem;">
+            <div>
+                <h3>What We Offer</h3>
+                <ul>
+                    <li>Handpicked luxury hotels and resorts</li>
+                    <li>Real-time room availability</li>
+                    <li>Verified listings with authentic images</li>
+                    <li>Secure and reliable booking process</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Why Choose Blissful Abodes?</h3>
+                <ul>
+                    <li>Comfort-focused hotel selection</li>
+                    <li>Simple and elegant user experience</li>
+                    <li>Instant booking confirmation</li>
+                    <li>Trusted platform for stress-free stays</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="about-stats" style="display:flex; justify-content:center; gap:4rem; margin-top:4rem; text-align:center;">
+            <div>
+                <h2 style="color:var(--primary-color);">500+</h2>
+                <p>Premium Hotels</p>
+            </div>
+            <div>
+                <h2 style="color:var(--primary-color);">50+</h2>
+                <p>Cities Covered</p>
+            </div>
+            <div>
+                <h2 style="color:var(--primary-color);">10K+</h2>
+                <p>Happy Guests</p>
+            </div>
+        </div>
+
+        <!-- Icons -->
+        <div class="about-icons" style="display:flex; justify-content:center; gap:3rem; margin-top:4rem;">
+            <div style="text-align:center;">
+                <span style="font-size:2rem;">🔒</span>
+                <h4>Safe & Trusted</h4>
+                <p>Your stays are secure and verified.</p>
+            </div>
+            <div style="text-align:center;">
+                <span style="font-size:2rem;">📍</span>
+                <h4>Great Locations</h4>
+                <p>Hotels in top cities & prime spots.</p>
+            </div>
+            <div style="text-align:center;">
+                <span style="font-size:2rem;">🕑</span>
+                <h4>24/7 Support</h4>
+                <p>We’re always here to help you.</p>
+            </div>
+        </div>
+
+        <!-- Gallery -->
+        <div class="about-gallery" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; margin-top:4rem;">
+            <img src="/static/images/hotel1.jpg" alt="Hotel 1" style="width:100%; border-radius:8px;">
+            <img src="/static/images/hotel2.jpg" alt="Hotel 2" style="width:100%; border-radius:8px;">
+            <img src="/static/images/hotel3.jpg" alt="Hotel 3" style="width:100%; border-radius:8px;">
+        </div>
+
+        <!-- Testimonials -->
+        <div class="about-testimonials" style="display:flex; flex-wrap:wrap; justify-content:center; gap:2rem; margin-top:4rem;">
+            <div class="feature-card" style="flex:1 1 300px; text-align:center;">
+                <p>"Blissful Abodes made our family vacation unforgettable!"</p>
+                <p><strong>- Pooja </strong></p>
+            </div>
+            <div class="feature-card" style="flex:1 1 300px; text-align:center;">
+                <p>"Seamless booking and premium hotels at great locations."</p>
+                <p><strong>- Vijay Thalapathy </strong></p>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

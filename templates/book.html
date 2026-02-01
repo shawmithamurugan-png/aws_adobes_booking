@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Book Hotel{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Book Your Stay 🏨</h2>
+
+    <form method="POST">
+
+        <form method="POST">
+    <label>Guest Name</label>
+    <input type="text" name="guest_name" required>
+
+    <label>Number of Members</label>
+    <input type="number" name="members" required>
+
+    <label>Check-in Date</label>
+    <input type="date" name="check_in" required>
+
+    <label>Check-out Date</label>
+    <input type="date" name="check_out" required>
+
+    <button type="submit" class="btn btn-primary">
+        Confirm Booking
+    </button>
+
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+
+<h2>👩‍💼 Admin Dashboard</h2>
+
+<h3>Total Bookings: {{ total_bookings }}</h3>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>Guest Name</th>
+        <th>Hotel / Room</th>
+        <th>Members</th>
+    </tr>
+
+    {% for booking in bookings %}
+    <tr>
+        <td>{{ booking.guest_name }}</td>
+        <td>{{ booking.hotel_name }}</td>
+        <td>{{ booking.members }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

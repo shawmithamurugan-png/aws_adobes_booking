@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% block title %}Welcome | Blissful Abodes{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <!-- HERO SECTION -->
+    <div class="hero">
+        <h1>Blissful Abodes – Where Every Stay Tells a Story</h1>
+<p>Luxury spaces, personalized comfort, and memories that last.</p>
+
+
+        {% if not session.get('username') and not session.get('admin') %}
+        <div class="mt-4">
+            <a href="{{ url_for('login') }}" class="btn btn-primary">Guest Login</a>
+            <a href="{{ url_for('signup') }}" class="btn btn-secondary" style="margin-left: 1rem;">
+                Create Account
+            </a>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- FEATURES SECTION -->
+    <section class="features">
+
+        <div class="feature-card">
+            <h3>About Blissful Abodes</h3>
+            <p>
+                Blissful Abodes is a hotel booking platform that helps travelers
+                find handpicked luxury hotels and book their stay with ease.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Our Services</h3>
+            <ul>
+                <li>Premium hotel listings</li>
+                <li>Real-time availability</li>
+                <li>Secure booking</li>
+                <li>Verified hotels</li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <h3>Easy Booking</h3>
+            <p>
+                Search, compare, and book your stay in just a few clicks.
+            </p>
+        </div>
+
+    </section>
+    <!-- ✅ FEATURES CLOSED HERE -->
+
+    <!-- SEARCH & FILTER SECTION -->
+    <section class="search-section">
+    <h2>Find Your Stay</h2>
+
+    <form method="GET" action="{{ url_for('index') }}" class="filter-bar">
+
+        <div class="filter-item">
+            <label>Sort by Price</label>
+            <select name="price">
+                <option value="">Default</option>
+                <option value="low">Low to High</option>
+                <option value="high">High to Low</option>
+            </select>
+        </div>
+
+        <div class="filter-item">
+            <label>Place</label>
+            <select name="place" class="place-select">
+                <option value="">All Places</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Mumbai">Mumbai</option>
+            </select>
+        </div>
+
+        <div class="filter-item">
+            <label>Rating</label>
+            <select name="rating">
+                <option value="">Default</option>
+                <option value="high">4.0 & Above</option>
+                <option value="low">Below 4.0</option>
+            </select>
+        </div>
+
+        <div class="filter-item">
+            <button type="submit" class="apply-btn">Apply Filters</button>
+        </div>
+
+    </form>
+</section>
+
+    <!-- RECOMMENDED HOTELS -->
+    <section class="recommended-hotels">
+        <h2>Recommended Stays</h2>
+
+        <div class="hotel-grid">
+            {% for hotel in hotels %}
+            <div class="hotel-card">
+
+                <img src="{{ url_for('static', filename=hotel.image) }}" alt="{{ hotel.name }}">
+
+                <span class="price-badge">₹ {{ hotel.price }}/night</span>
+                <span class="rating-badge">⭐ {{ hotel.rating }}</span>
+
+                <h3>{{ hotel.name }}</h3>
+                <p class="location">{{ hotel.location }}</p>
+
+                <a href="{{ url_for('login') }}" class="btn btn-primary">
+                    Book Now
+                </a>
+                
+            </div>
+            {% else %}
+            <p>No hotels found.</p>
+            {% endfor %}
+        </div>
+    </section>
+
+</div>
+{% endblock %}
+<!-- WHY CHOOSE US -->
+<section class="why-us">
+    <h2>Why Choose Blissful Abodes?</h2>
+
+    <div class="why-grid">
+        <div class="why-card">
+            <span class="why-icon">🏨</span>
+            <h4>Handpicked Hotels</h4>
+            <p>Only verified and quality stays.</p>
+        </div>
+
+        <div class="why-card">
+            <span class="why-icon">💳</span>
+            <h4>Secure Payments</h4>
+            <p>100% safe and encrypted transactions.</p>
+        </div>
+
+        <div class="why-card">
+            <span class="why-icon">📞</span>
+            <h4>24/7 Support</h4>
+            <p>We’re here anytime you need help.</p>
+        </div>
+
+        <div class="why-card">
+            <span class="why-icon">⭐</span>
+            <h4>Top Rated Stays</h4>
+            <p>Trusted by thousands of travelers.</p>
+        </div>
+    </div>
+</section>

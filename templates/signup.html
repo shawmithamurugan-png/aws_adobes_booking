@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign Up | Blissful Abodes{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="form-container">
+
+        <h2 class="text-center mb-2">Create Your Guest Account</h2>
+        <p class="text-center text-muted mb-4">
+            Join Blissful Abodes and book your perfect stay in minutes 🏨
+        </p>
+
+        <form action="{{ url_for('signup') }}" method="POST">
+
+            <!-- EMAIL -->
+            <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" name="email" class="form-control"
+                       placeholder="Enter your email" required>
+            </div>
+
+            <!-- PASSWORD -->
+            <div class="form-group">
+                <label class="form-label">Password</label>
+                <div class="password-box">
+                    <input type="password" name="password" id="password"
+                           class="form-control" placeholder="Create a secure password" required>
+                    <span onclick="togglePassword('password')">👁</span>
+                </div>
+            </div>
+
+            <!-- CONFIRM PASSWORD -->
+            <div class="form-group">
+                <label class="form-label">Confirm Password</label>
+                <div class="password-box">
+                    <input type="password" name="confirm_password" id="confirm_password"
+                           class="form-control" placeholder="Re-enter password" required>
+                    <span onclick="togglePassword('confirm_password')">👁</span>
+                </div>
+            </div>
+
+            <!-- BUTTON -->
+            <button type="submit" class="btn btn-primary w-100">
+                Create Account
+            </button>
+
+        </form>
+
+        <p class="mt-4 text-center">
+            Already have an account?
+            <a href="{{ url_for('login') }}">Sign in here</a>
+        </p>
+
+    </div>
+</div>
+
+<script>
+function togglePassword(id) {
+    const field = document.getElementById(id);
+    field.type = field.type === "password" ? "text" : "password";
+}
+</script>
+{% endblock %}
