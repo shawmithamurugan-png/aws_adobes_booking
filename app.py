@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-SNS_TOPIC_ARN = os.getenv("arn:aws:sns:us-east-1:539247489202:Booking_confirmation")
+SNS_TOPIC_ARN = os.getenv("arn:aws:sns:us-east-1:863518452744:Booking_confirmed")
 
 
 AWS_REGION = "us-east-1"
@@ -191,7 +191,7 @@ Thank you for choosing Blissful Abodes!
 
 sns = boto3.client("sns", region_name="us-east-1")
 
-TOPIC_ARN = "arn:aws:sns:us-east-1:539247489202:Booking_confirmed"
+TOPIC_ARN = "arn:aws:sns:us-east-1:863518452744:Booking_confirmed"
 
 def subscribe_user_email(email):
     response = sns.subscribe(
@@ -207,7 +207,7 @@ def send_sns_message(subject, message):
         sns = boto3.client('sns', region_name='us-east-1')
 
         response = sns.publish(
-            TopicArn="arn:aws:sns:us-east-1:539247489202:Booking_confirmation",
+            TopicArn=TOPIC_ARN,
             Subject=subject,
             Message=message
         )
@@ -427,8 +427,8 @@ def book():
 def staff_uppercase_redirect():
     return redirect(url_for('staff_login'))
 
-if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+if __name__ == "__main__":
+    app.run(debug=True, use_reloader=False)
 
 
 
